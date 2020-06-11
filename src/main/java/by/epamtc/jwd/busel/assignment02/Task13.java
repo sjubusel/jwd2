@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 public class Task13 {
     private static String replaceLettersOfLongestWord(String text,
             char oldChar, char newChar) {
-        final String[] words = text.split("[^A-Za-zА-Яа-яёЁ-]+");
+        String[] words = text.split("[^A-Za-zА-Яа-яёЁ-]+");
         int max = getMaxLengthOfWord(words);
         Matcher matcher = Pattern.compile(String.format("[A-Za-zА-Яа-яёЁ-]{%d}",
                 max)).matcher(text);
@@ -32,10 +32,10 @@ public class Task13 {
     }
 
     public static void main(String[] args) {
-        String text = "Lorem 123 ipsum dolor sit amet, unde что-то iste natus " +
-                "error sit voluptatem accusantium 123 doloremque laudantium, " +
-                "totam rem aperiam eaque ipsa, facere 123 possimus, omnis " +
-                " 123 voluptas assumenda est, omnis dolor repellendus?";
+        String text = "Lorem ipsum dolor sit amet, unde что-то iste natus " +
+                "error sit voluptatem accusantium doloremque laudantium, " +
+                "totam rem aperiam eaque ipsa, facere possimus, omnis " +
+                " voluptas assumenda est, omnis dolor repellendus?";
         String modifiedText = replaceLettersOfLongestWord(text, 'a', 'b');
         System.out.println(modifiedText);
 
