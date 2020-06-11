@@ -20,6 +20,5 @@ public class Task03 {
         String line = "abcdabcd123123";
         String newLine = deleteRepetitiveSymbols(line);
         System.out.println(newLine);
-
     }
 }
