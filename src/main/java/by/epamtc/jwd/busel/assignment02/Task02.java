@@ -35,7 +35,5 @@ public class Task02 {
                 symbolsInfoHolder.getLowerCasePercentage());
         System.out.printf("Uppercase percentage: %g\n",
                 symbolsInfoHolder.getUpperCasePercentage());
-
-
     }
 }
