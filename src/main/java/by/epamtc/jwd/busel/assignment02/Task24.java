@@ -1,8 +1,10 @@
 package by.epamtc.jwd.busel.assignment02;
 
 public class Task24 {
+    private static final String WORD_SYMBOLS = "[^A-Za-zА-Яа-яёЁ0-9-]+";
+
     private static String[] extractWordsFromString(String text) {
-        return text.split("[^A-Za-zА-Яа-яёЁ]+");
+        return text.split(WORD_SYMBOLS);
     }
 
     public static void main(String[] args) {
@@ -11,7 +13,7 @@ public class Task24 {
                 " accusantium doloremque laudantium, totam rem aperiam eaque" +
                 " ipsa, qui dolorem ipsum, quia dolor sit, amet, consectetur," +
                 " adipisci velit, sed quia non numquam eius modi tempora" +
-                " incidunt, ut labore et dolore magnam aliquam quaerat" +
+                " incidunt, ut labore et что-то dolore magnam aliquam quaerat" +
                 " voluptatem! Excepteur sint occaecat cupidatat non proident," +
                 " consectetur adipiscing elit, quae ab illo inventore veritatis" +
                 " et quasi architecto beatae vitae dicta sunt, explicabo!";
