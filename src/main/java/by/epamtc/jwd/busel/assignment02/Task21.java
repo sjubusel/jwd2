@@ -5,28 +5,28 @@ import java.math.BigInteger;
 public class Task21 {
     private static String performAdditionOfWholeNumbersViaString(String summand,
             String addend) {
-        int unitsNumber = getNumberOfEightDigitUnits(summand, addend);
+        int unitsNumber = findNumberOfEightDigitUnits(summand, addend);
         StringBuilder sBuilder = new StringBuilder(unitsNumber * 8);
         StringBuilder summandBuilder = new StringBuilder(summand);
         StringBuilder addendBuilder = new StringBuilder(addend);
-        int[] eightDigitNumbers = getArrayRepresentationOfResult(unitsNumber,
+        int[] eightDigitNumbers = obtainArrayRepresentationOfResult(unitsNumber,
                 summandBuilder, addendBuilder);
         return formResultViaString(eightDigitNumbers, sBuilder);
     }
 
-    private static int getNumberOfEightDigitUnits(String summand, String addend) {
+    private static int findNumberOfEightDigitUnits(String summand, String addend) {
         int unitsNumberOf1st = (int) Math.ceil(1.0 * summand.length() / 8);
         int unitsNumberOf2nd = (int) Math.ceil(1.0 * addend.length() / 8);
         return Math.max(unitsNumberOf1st, unitsNumberOf2nd) + 1;
     }
 
-    private static int[] getArrayRepresentationOfResult(int unitsNumberByEight,
+    private static int[] obtainArrayRepresentationOfResult(int unitsNumberByEight,
             StringBuilder summandBuilder, StringBuilder addendBuilder) {
         int[] eightDigitNumbers = new int[unitsNumberByEight];
         int appendix = 0;
         for (int i = 0; i < eightDigitNumbers.length; i++) {
-            int summandEightDigitNumber = getEightDigitByUnit(summandBuilder);
-            int addendEightDigitNumber = getEightDigitByUnit(addendBuilder);
+            int summandEightDigitNumber = findEightDigitByUnit(summandBuilder);
+            int addendEightDigitNumber = findEightDigitByUnit(addendBuilder);
             int sum = summandEightDigitNumber + addendEightDigitNumber
                     + appendix;
             if (sum < 100_000_000) {
@@ -40,7 +40,7 @@ public class Task21 {
         return eightDigitNumbers;
     }
 
-    private static int getEightDigitByUnit(StringBuilder summand) {
+    private static int findEightDigitByUnit(StringBuilder summand) {
         int length = summand.length();
         int result = 0;
         if (length > 0) {
@@ -86,10 +86,12 @@ public class Task21 {
                 "79898798798798317982342";
         String addend = "43242342354354354353478979879879879879879897878799879";
         String sum = performAdditionOfWholeNumbersViaString(summand, addend);
-        System.out.println(sum);
+        System.out.printf("RESULT BY A CUSTOM METHOD:  %s\n", sum);
+
         BigInteger bigInteger1 = new BigInteger(summand);
         BigInteger bigInteger2 = new BigInteger(addend);
-        System.out.println(bigInteger1.add(bigInteger2));
+        System.out.printf("RESULT BY BIGINTEGER CLASS: %s\n",
+                bigInteger1.add(bigInteger2));
 
     }
 }
