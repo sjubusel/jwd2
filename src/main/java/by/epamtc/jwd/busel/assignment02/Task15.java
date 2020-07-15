@@ -1,8 +1,10 @@
 package by.epamtc.jwd.busel.assignment02;
 
 public class Task15 {
+    private static final String NOT_WORD_SYMBOLS = "[^A-Za-zА-Яа-яёЁ-]+";
+
     private static int countWordsNumber(String text) {
-        String[] words = text.split("[^A-Za-zА-Яа-яЁё-]+");
+        String[] words = text.split(NOT_WORD_SYMBOLS);
         return words.length;
     }
 
