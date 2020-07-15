@@ -1,6 +1,8 @@
 package by.epamtc.jwd.busel.assignment02;
 
 public class Task23 {
+    private static final String SEVERAL_WHITESPACES = "[\\p{Space}]{2,}";
+
     public static void main(String[] args) {
         String text = "Quis autem vel eum iure reprehenderit, unde omnis   " +
                 "         iste natus error sit voluptatem accusantium " +
@@ -13,7 +15,6 @@ public class Task23 {
     }
 
     private static String deleteExcessWhiteSpaces(String text) {
-
-        return text.replaceAll("[\\p{Space}]{2,}", " ");
+        return text.replaceAll(SEVERAL_WHITESPACES, " ");
     }
 }
