@@ -10,7 +10,7 @@ public class Task13 {
     private static String replaceLettersOfLongestWord(String text,
             char oldChar, char newChar) {
         String[] words = text.split(NOT_WORD_SYMBOLS);
-        int maxLength = getMaxLengthOfWord(words);
+        int maxLength = findMaxLengthOfWord(words);
         String regEx = buildRegExToMatchWordOfSomeLength(maxLength);
         Matcher matcher = Pattern.compile(regEx).matcher(text);
 
@@ -32,7 +32,7 @@ public class Task13 {
         return String.format("\\b%s{%d}\\b", WORD_SYMBOL, wordLength);
     }
 
-    private static int getMaxLengthOfWord(String[] words) {
+    private static int findMaxLengthOfWord(String[] words) {
         int max = 0;
         for (String word : words) {
             if (max < word.length()) {
