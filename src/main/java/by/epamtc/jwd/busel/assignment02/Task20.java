@@ -2,19 +2,17 @@ package by.epamtc.jwd.busel.assignment02;
 
 
 public class Task20 {
-    private static String substituteSubstring(String text, String oldSubstring,
-            String newSubstring) {
-        StringBuilder stringBuilder = new StringBuilder(text);
-        int beginIndex = stringBuilder.indexOf(oldSubstring);
-        stringBuilder.delete(beginIndex, beginIndex + oldSubstring.length());
-        stringBuilder.insert(beginIndex, newSubstring);
-        return new String(stringBuilder);
+    private static String substituteSubstringUsingGeneralMethod(String text,
+            String oldSubstring, String newSubstring) {
+        return text.replaceAll(oldSubstring, newSubstring);
     }
 
     public static void main(String[] args) {
-        String text = "Бусел Сергей Юрьевич";
-        String modifiedText = substituteSubstring(text, text.substring(6, 12),
-                "Siarhei");
-        System.out.println(modifiedText);
+        String text = "Бусел Сергей Юрьевич - Сергей Юрьевич Бусел";
+
+        String modifiedText1 = substituteSubstringUsingGeneralMethod(text,
+                text.substring(6, 12), "Siarhei");
+
+        System.out.println(modifiedText1);
     }
 }
