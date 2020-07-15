@@ -4,13 +4,14 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Task11 {
+    private static final String WORD_SYMBOLS = "[A-Za-zА-Яа-яЁё-]+";
+
     private static String reverseWords(String text) {
         StringBuilder stringBuilder = new StringBuilder(text.length());
-        Matcher matcher = Pattern.compile("[A-Za-zА-Яа-яЁё-]+").matcher(text);
+        Matcher matcher = Pattern.compile(WORD_SYMBOLS).matcher(text);
         String delimiter = "";
         while (matcher.find()) {
-            stringBuilder.insert(0, delimiter)
-                    .insert(0, matcher.group());
+            stringBuilder.insert(0, delimiter).insert(0, matcher.group());
             delimiter = ", ";
         }
         return new String(stringBuilder);

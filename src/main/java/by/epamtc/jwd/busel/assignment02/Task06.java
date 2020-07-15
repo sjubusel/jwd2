@@ -20,8 +20,7 @@ public class Task06 {
     public static void main(String[] args) {
         String text = "abcdfg";
         String extendedText1 = insertSubstring(text, "123", 4);
-        String extendedText2 = insertSubstringIntoBeginning(text,
-                "456");
+        String extendedText2 = insertSubstringIntoBeginning(text, "456");
         String extendedText3 = insertSubstringToEnd(text, "789");
         System.out.println(extendedText1);
         System.out.println(extendedText2);

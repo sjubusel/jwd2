@@ -8,7 +8,6 @@ public class Task04 {
                 number++;
             }
         }
-
         return number;
     }
 

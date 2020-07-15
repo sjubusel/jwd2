@@ -3,7 +3,7 @@ package by.epamtc.jwd.busel.assignment02;
 import by.epamtc.jwd.busel.assignment02.entity.SymbolsInfoHolder;
 
 public class Task02 {
-    private static SymbolsInfoHolder getSymbolsInfo(String textLine) {
+    private static SymbolsInfoHolder receiveSymbolsInfo(String textLine) {
         int lowercaseLetterNumber = 0;
         int uppercaseLetterNumber = 0;
         for (int i = 0; i < textLine.length(); i++) {
@@ -29,7 +29,7 @@ public class Task02 {
                 "Это все мое родное\n" +
                 "Это Родина моя,\n" +
                 "Всех люблю на свете я!";
-        SymbolsInfoHolder symbolsInfoHolder = getSymbolsInfo(textLine);
+        SymbolsInfoHolder symbolsInfoHolder = receiveSymbolsInfo(textLine);
 
         System.out.printf("Lowercase percentage: %g\n",
                 symbolsInfoHolder.getLowerCasePercentage());

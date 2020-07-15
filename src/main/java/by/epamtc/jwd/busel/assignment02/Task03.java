@@ -7,9 +7,8 @@ public class Task03 {
             String character = String.valueOf(stringBuilder.charAt(i));
             int pointer = i;
             int indexToDelete;
-            while ((pointer++ < (stringBuilder.length() - 1))
-                    && (indexToDelete = stringBuilder.indexOf(character,
-                    pointer)) != -1) {
+            while ((pointer++ < (stringBuilder.length() - 1)) && ((indexToDelete
+                    = stringBuilder.indexOf(character, pointer)) != -1)) {
                 stringBuilder.deleteCharAt(indexToDelete);
             }
         }

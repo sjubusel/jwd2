@@ -1,13 +1,10 @@
 package by.epamtc.jwd.busel.assignment02;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 public class Task12 {
+    private static final String WHITESPACES = "[\\p{Space}]+";
+
     private static String replaceWhitespacesWithAsterisk(String text) {
-        String regExp = "[\\p{Space}]+";
-        Matcher matcher = Pattern.compile(regExp).matcher(text);
-        return matcher.replaceAll("*");
+        return text.replaceAll(WHITESPACES, "*");
     }
 
     public static void main(String[] args) {
